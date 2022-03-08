@@ -36,57 +36,55 @@ class _GateValveState extends State<GateValve> {
               left: size.width * 0.05,
               right: size.width * 0.05),
           child: Container(
-            color: Colors.teal,
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Farming',
-                        style: TextStyle(
-                            fontSize: size.height * 0.05,
-                            fontWeight: FontWeight.w900),
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: size.height * 0.05,
-                                width: size.width * 0.05,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(300),
-                                ),
-                                child: Center(
-                                  child:Image.asset("assets/grid.png"),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Farming',
+                      style: TextStyle(
+                          fontSize: size.height * 0.05,
+                          fontWeight: FontWeight.w900),
+                    ),
+                    Container(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: size.height * 0.05,
                               width: size.width * 0.05,
-                            ),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: size.height * 0.05,
-                                width: size.width * 0.05,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(300),
-                                ),
-                                child: Center(
-                                  child:Image.asset("assets/setting.png"),
-                                ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(300),
+                              ),
+                              child: Center(
+                                child:Image.asset("assets/grid.png"),
                               ),
                             ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                          ),
+                          SizedBox(
+                            width: size.width * 0.05,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: size.height * 0.05,
+                              width: size.width * 0.05,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(300),
+                              ),
+                              child: Center(
+                                child:Image.asset("assets/setting.png"),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: size.height * 0.05,

@@ -29,7 +29,7 @@ class _SingupScreenState extends State<SingupScreen> {
                   decoration: BoxDecoration(
                     color: Color(0xffECF0F3),
                     borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black12,
                         offset: Offset(4.0, 4.0),
@@ -52,9 +52,9 @@ class _SingupScreenState extends State<SingupScreen> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: size.height * 0.08,
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Login",
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
@@ -71,7 +71,7 @@ class _SingupScreenState extends State<SingupScreen> {
                   decoration: BoxDecoration(
                     color: Color(0xffECF0F3),
                     borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.white,
                         offset: Offset(4.0, 4.0),
