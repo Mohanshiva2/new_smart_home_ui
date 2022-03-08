@@ -36,7 +36,7 @@ class _GateValveState extends State<GateValve> {
               left: size.width * 0.05,
               right: size.width * 0.05),
           child: Container(
-
+            color: Colors.teal,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -176,7 +176,7 @@ class _GateValveState extends State<GateValve> {
                       ),
 
                       SizedBox(
-                        height: size.height * 0.01,
+                        height: size.height * 0.05,
                       ),
                       Center(
                         child: Container(
@@ -202,7 +202,7 @@ class _GateValveState extends State<GateValve> {
                           ),
                           child: ConfirmationSlider(
                               backgroundShape: BorderRadius.circular(40),
-                              height: size.height * 0.07,
+                              height: size.height * 0.06,
                               width: size.width * 0.6,
                               text: "Slid to off all",
                               backgroundColorEnd: Colors.white,

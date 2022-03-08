@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:new_smart_home_ui/Screens/login-singup/singup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -150,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               margin: EdgeInsets.only(top: 50),
               height: 50,
-              width: 300,
+              width: size.width*0.5,
               decoration: BoxDecoration(
                 color: Color(0xffECF0F3),
                 borderRadius: BorderRadius.circular(30),
@@ -170,9 +169,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
 
+                children: [
+                  SizedBox(width: size.width*0.06,),
+                  Image.asset("assets/icons8-google-480.png",height: size.height*0.03,),
+                  SizedBox(width: size.width*0.07,),
                   Text(
                     'Login with Google',
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),

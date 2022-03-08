@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:new_smart_home_ui/Screens/Main_Screen/device/Add_Device/QR_Scanner.dart';
 import 'package:new_smart_home_ui/Screens/NaveBar/tabbar.dart';
-import 'package:new_smart_home_ui/Screens/login-singup/welcome_screen.dart';
 
-import 'Screens/login-singup/login_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+  //disable top bar in app
+  SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.immersive,
+  );
   runApp(const MyApp());
 }
 
@@ -35,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       theme:  ThemeData(
         scaffoldBackgroundColor:  Color(0xffECF0F3),
       ),
-      home: TabbBar(),
+      home:TabbBar(),
     );
   }
 }

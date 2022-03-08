@@ -15,7 +15,7 @@ class TabbBar extends StatefulWidget {
 }
 
 class _TabbBarState extends State<TabbBar> {
-  int _selectedTab = 0;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -50,26 +50,33 @@ class _TabbBarState extends State<TabbBar> {
             curveType: CurveType.concave,
             depth: 50,
             child: BottomNavigationBar(
+              showSelectedLabels: true,
+              showUnselectedLabels: false,
               elevation: 1.0,
               selectedItemColor: Colors.black87,
               unselectedItemColor: Colors.black87,
-              currentIndex: _selectedTab,
+              currentIndex: _selectedIndex,
               onTap: (index) {
                 setState(() {
-                  this._selectedTab = index;
+                  this._selectedIndex = index;
                 });
               },
               items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.dashboard_rounded), label: 'Devices'),
+                    icon: Icon(Icons.home_outlined),
+                    label: 'Home',activeIcon: Icon(Icons.home)),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.dashboard_customize_outlined), label: 'Devices',activeIcon: Icon(Icons.dashboard_customize)),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.grass),
                   label: 'Farming',
+                  activeIcon: Icon(Icons.grass,color: Colors.green,semanticLabel: "Farming",),
+
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.access_time_filled_rounded),
                   label: 'Routines',
+
                 ),
               ],
             ),
@@ -78,34 +85,66 @@ class _TabbBarState extends State<TabbBar> {
       ),
       body: Stack(
         children: [
-          renderView(
-            0,
-            Home(),
-          ),
-          renderView(
-            1,
-            Device(),
-          ),
-          renderView(
-              2,
-              Farming(),
-          ),
-          renderView(
-            3,
-            Routines(),
-          ),
+          // renderView(
+          //   0,
+          //   Home(),
+          // ),
+          // renderView(
+          //   1,
+          //   Device(),
+          // ),
+          // renderView(
+          //     2,
+          //     Farming(),
+          // ),
+          // renderView(
+          //   3,
+          //   Routines(),
+          //   ).
+          _buildOffstageNavigator(0),
+          _buildOffstageNavigator(1),
+          _buildOffstageNavigator(2),
+          _buildOffstageNavigator(3),
         ],
       ),
     );
   }
 
-  Widget renderView(int tabIndex, Widget view) {
-    return IgnorePointer(
-      ignoring: _selectedTab != tabIndex,
-      child: Opacity(
-        opacity: _selectedTab == tabIndex ? 1 : 0,
-        child: view,
+  Map<String, WidgetBuilder> _routeBuilders(BuildContext context, int index) {
+    return {
+      '/': (context) {
+        return [
+          Home(),
+          Device(),
+          Farming(),
+          Routines(),
+        ].elementAt(index);
+      },
+    };
+  }
+
+  Widget _buildOffstageNavigator(int index) {
+    var routeBuilders = _routeBuilders(context, index);
+
+    return Offstage(
+      offstage: _selectedIndex != index,
+      child: Navigator(
+        onGenerateRoute: (routeSettings) {
+          return MaterialPageRoute(
+            builder: (context) => routeBuilders[routeSettings.name]!(context),
+          );
+        },
       ),
     );
   }
+//
+// Widget renderView(int tabIndex, Widget view) {
+//   return IgnorePointer(
+//     ignoring: _selectedTab != tabIndex,
+//     child: Opacity(
+//       opacity: _selectedTab == tabIndex ? 1 : 0,
+//       child: view,
+//     ),
+//   );
+// }
 }

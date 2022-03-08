@@ -14,15 +14,12 @@ class Farming extends StatefulWidget {
 }
 
 class _FarmingState extends State<Farming> {
-
-
   bool values = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return
-      Scaffold(
-
+    return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
@@ -71,7 +68,7 @@ class _FarmingState extends State<Farming> {
                                   borderRadius: BorderRadius.circular(300),
                                 ),
                                 child: Center(
-                                  child:Image.asset("assets/setting.png"),
+                                  child: Image.asset("assets/setting.png"),
                                 ),
                               ),
                             ),
@@ -117,8 +114,8 @@ class _FarmingState extends State<Farming> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const MotorScreen()),
+                                            builder: (context) => const MotorScreen(),
+                                          ),
                                         );
                                       });
                                     },
@@ -155,20 +152,19 @@ class _FarmingState extends State<Farming> {
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           ToggleSwitch(
-                                            totalSwitches: 2,
-                                            minHeight: size.height * 0.2,
-                                            minWidth: size.width * 0.07,
-                                            cornerRadius: 9,
-                                            activeBgColor: [Color(0xff374957)],
-                                            activeFgColor: Colors.white,
-                                            inactiveFgColor: Colors.white,
-                                            inactiveBgColor: Colors.white,
-                                            borderColor: [Colors.black12],
-                                            borderWidth: 1,
-                                            onToggle: (bool){
-
-                                          }
-                                          ),
+                                              totalSwitches: 2,
+                                              minHeight: size.height * 0.2,
+                                              minWidth: size.width * 0.07,
+                                              cornerRadius: 9,
+                                              activeBgColor: [
+                                                Color(0xff374957)
+                                              ],
+                                              activeFgColor: Colors.white,
+                                              inactiveFgColor: Colors.white,
+                                              inactiveBgColor: Colors.white,
+                                              borderColor: [Colors.black12],
+                                              borderWidth: 1,
+                                              onToggle: (bool) {}),
                                         ],
                                       ),
                                     ),
@@ -271,11 +267,11 @@ class _FarmingState extends State<Farming> {
                                             ),
                                           ],
                                         ),
-                                        child:
-                                        ConfirmationSlider(
-                                            backgroundShape: BorderRadius.circular(40),
-                                            height: size.height * 0.07,
-                                            width: size.width*0.6,
+                                        child: ConfirmationSlider(
+                                            backgroundShape:
+                                                BorderRadius.circular(40),
+                                            height: size.height * 0.06,
+                                            width: size.width * 0.6,
                                             text: "Slid to off all",
                                             backgroundColorEnd: Colors.white,
                                             backgroundColor: Colors.white,
