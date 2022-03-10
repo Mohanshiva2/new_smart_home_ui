@@ -16,10 +16,7 @@ class _MotorScreenState extends State<MotorScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(
-              top: size.height * 0.03,
-              left: size.width * 0.05,
-              right: size.width * 0.05),
+          padding: EdgeInsets.all(30),
           child: Container(
             // color: Colors.teal,
             child: Column(
@@ -32,7 +29,7 @@ class _MotorScreenState extends State<MotorScreen> {
                       Text(
                         'Farming',
                         style: TextStyle(
-                            fontSize: size.height * 0.05,
+                            fontSize: size.height * 0.03,
                             fontWeight: FontWeight.w900),
                       ),
                       Container(
@@ -41,7 +38,7 @@ class _MotorScreenState extends State<MotorScreen> {
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: size.height * 0.05,
+                                height: size.height * 0.02,
                                 width: size.width * 0.05,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(300),
@@ -57,7 +54,7 @@ class _MotorScreenState extends State<MotorScreen> {
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: size.height * 0.05,
+                                height: size.height * 0.02,
                                 width: size.width * 0.05,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(300),
@@ -85,7 +82,7 @@ class _MotorScreenState extends State<MotorScreen> {
                       Text(
                         "Motors",
                         style: TextStyle(
-                            fontSize: size.height * 0.04,
+                            fontSize: size.height * 0.025,
                             fontWeight: FontWeight.w900),
                       ),
                       SizedBox(

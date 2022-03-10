@@ -22,10 +22,9 @@ class _FarmingState extends State<Farming> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(
-              top: size.height * 0.035,
-              left: size.width * 0.05,
-              right: size.width * 0.05),
+          padding: EdgeInsets.all(
+            30
+             ),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +36,8 @@ class _FarmingState extends State<Farming> {
                       Text(
                         'Farming',
                         style: TextStyle(
-                            fontSize: size.height * 0.04,
+                            fontSize: size.height * 0.03,
+                            fontFamily: 'Avenir-Book.ttf',
                             fontWeight: FontWeight.w900),
                       ),
                       Container(
@@ -46,7 +46,7 @@ class _FarmingState extends State<Farming> {
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: size.height * 0.05,
+                                height: size.height * 0.02,
                                 width: size.width * 0.05,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(300),
@@ -62,7 +62,7 @@ class _FarmingState extends State<Farming> {
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: size.height * 0.05,
+                                height: size.height * 0.02,
                                 width: size.width * 0.05,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(300),
@@ -89,7 +89,8 @@ class _FarmingState extends State<Farming> {
                       Text(
                         "Devices",
                         style: TextStyle(
-                            fontSize: size.height * 0.03,
+                            fontSize: size.height * 0.025,
+                            fontFamily: 'Avenir-Book.ttf',
                             fontWeight: FontWeight.w900),
                       ),
                       SizedBox(
@@ -148,7 +149,8 @@ class _FarmingState extends State<Farming> {
                                           Text(
                                             "Main Motor",
                                             style: TextStyle(
-                                                fontSize: size.height * 0.023,
+                                                fontSize: size.height * 0.020,
+                                                fontFamily: 'Avenir-Book.ttf',
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           ToggleSwitch(
@@ -212,7 +214,8 @@ class _FarmingState extends State<Farming> {
                                           Text(
                                             "Gate Valves",
                                             style: TextStyle(
-                                                fontSize: size.height * 0.023,
+                                                fontSize: size.height * 0.020,
+                                                fontFamily: 'Avenir-Book.ttf',
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           ToggleSwitch(
@@ -272,7 +275,7 @@ class _FarmingState extends State<Farming> {
                                                 BorderRadius.circular(40),
                                             height: size.height * 0.06,
                                             width: size.width * 0.6,
-                                            text: "Slid to off all",
+                                            text: "Slid to off all",textStyle: TextStyle( fontFamily: 'Avenir-Book.ttf',fontWeight: FontWeight.w800,color: Colors.grey.shade500),
                                             backgroundColorEnd: Colors.white,
                                             backgroundColor: Colors.white,
                                             shadow: BoxShadow(spreadRadius: -1),

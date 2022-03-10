@@ -17,95 +17,114 @@ class TabbBar extends StatefulWidget {
 class _TabbBarState extends State<TabbBar> {
   int _selectedIndex = 0;
 
+  List<GlobalKey<NavigatorState>> _navigatorKeys = [
+    GlobalKey<NavigatorState>(),
+    GlobalKey<NavigatorState>(),
+    GlobalKey<NavigatorState>(),
+    GlobalKey<NavigatorState>(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Color(0xffE5E5E5),
-          borderRadius: BorderRadius.circular(40),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(8.0, 8.0),
-              blurRadius: 9.0,
-              spreadRadius: 1,
-            ),
-            BoxShadow(
-              color: Colors.white,
-              offset: Offset(-4.0, -4.0),
-              blurRadius: 7.0,
-              spreadRadius: 1.0,
-            ),
-          ],
-        ),
-        margin: EdgeInsets.only(
-            bottom: size.height * 0.04,
-            left: size.width * 0.09,
-            right: size.width * 0.09),
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
-          child: ClayContainer(
-            curveType: CurveType.concave,
-            depth: 50,
-            child: BottomNavigationBar(
-              showSelectedLabels: true,
-              showUnselectedLabels: false,
-              elevation: 1.0,
-              selectedItemColor: Colors.black87,
-              unselectedItemColor: Colors.black87,
-              currentIndex: _selectedIndex,
-              onTap: (index) {
-                setState(() {
-                  this._selectedIndex = index;
-                });
-              },
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home_outlined),
-                    label: 'Home',activeIcon: Icon(Icons.home)),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.dashboard_customize_outlined), label: 'Devices',activeIcon: Icon(Icons.dashboard_customize)),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.grass),
-                  label: 'Farming',
-                  activeIcon: Icon(Icons.grass,color: Colors.green,semanticLabel: "Farming",),
-
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.access_time_filled_rounded),
-                  label: 'Routines',
-
-                ),
-              ],
+    return WillPopScope(
+      onWillPop: () async {
+        final isFirstRouteInCurrentTab =
+            !await _navigatorKeys[_selectedIndex].currentState!.maybePop();
+        return isFirstRouteInCurrentTab;
+      },
+      child: Scaffold(
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: Color(0xffE5E5E5),
+            borderRadius: BorderRadius.circular(40),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(8.0, 8.0),
+                blurRadius: 9.0,
+                spreadRadius: 1,
+              ),
+              BoxShadow(
+                color: Colors.white,
+                offset: Offset(-4.0, -4.0),
+                blurRadius: 7.0,
+                spreadRadius: 1.0,
+              ),
+            ],
+          ),
+          margin: EdgeInsets.only(
+              bottom: size.height * 0.04,
+              left: size.width * 0.09,
+              right: size.width * 0.09),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(30),),
+            child: ClayContainer(
+              curveType: CurveType.concave,
+              depth: 50,
+              child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                showSelectedLabels: false,
+                showUnselectedLabels: false,
+                // elevation: 1.0,
+                // selectedItemColor: Colors.black87,
+                // unselectedItemColor: Colors.black87,
+                currentIndex: _selectedIndex,
+                onTap: (index) {
+                  setState(() {
+                    this._selectedIndex = index;
+                  });
+                },
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Image.asset("assets/home.png",scale: 3.0, ),
+                    label: 'Home',
+                    activeIcon: Image.asset("assets/home.png", color: Colors.orange, scale: 3.0,),
+                  ),
+                  BottomNavigationBarItem(
+                    icon:Image.asset("assets/device.png",scale: 3.0, ),
+                    label: 'Devices',
+                    activeIcon: Image.asset("assets/device.png",scale: 3.0, color: Colors.orange,),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Image.asset("assets/farming.png",scale: 3.0, ),
+                    label: 'Farming',
+                    activeIcon:Image.asset("assets/farming.png",scale: 3.0, color: Colors.orange,),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Image.asset("assets/routine.png",scale: 3.0, ),
+                    label: 'Routines',
+                    activeIcon: Image.asset("assets/routine.png",scale: 3.0, color: Colors.orange,),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
-      body: Stack(
-        children: [
-          // renderView(
-          //   0,
-          //   Home(),
-          // ),
-          // renderView(
-          //   1,
-          //   Device(),
-          // ),
-          // renderView(
-          //     2,
-          //     Farming(),
-          // ),
-          // renderView(
-          //   3,
-          //   Routines(),
-          //   ).
-          _buildOffstageNavigator(0),
-          _buildOffstageNavigator(1),
-          _buildOffstageNavigator(2),
-          _buildOffstageNavigator(3),
-        ],
+        body: Stack(
+          children: [
+            // renderView(
+            //   0,
+            //   Home(),
+            // ),
+            // renderView(
+            //   1,
+            //   Device(),
+            // ),
+            // renderView(
+            //     2,
+            //     Farming(),
+            // ),
+            // renderView(
+            //   3,
+            //   Routines(),
+            //   ).
+            _buildOffstageNavigator(0),
+            _buildOffstageNavigator(1),
+            _buildOffstageNavigator(2),
+            _buildOffstageNavigator(3),
+          ],
+        ),
       ),
     );
   }
@@ -129,6 +148,7 @@ class _TabbBarState extends State<TabbBar> {
     return Offstage(
       offstage: _selectedIndex != index,
       child: Navigator(
+        key: _navigatorKeys[index],
         onGenerateRoute: (routeSettings) {
           return MaterialPageRoute(
             builder: (context) => routeBuilders[routeSettings.name]!(context),

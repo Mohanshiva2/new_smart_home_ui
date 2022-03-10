@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+
 
 
 
@@ -18,10 +18,7 @@ class ValveDetails extends StatelessWidget {
       Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(
-                top: size.height * 0.03,
-                left: size.width * 0.05,
-                right: size.width * 0.05),
+            padding: EdgeInsets.all(30),
             child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +30,7 @@ class ValveDetails extends StatelessWidget {
                         Text(
                           'Farming',
                           style: TextStyle(
-                              fontSize: size.height * 0.05,
+                              fontSize: size.height * 0.03,
                               fontWeight: FontWeight.w900),
                         ),
                         Container(
@@ -42,7 +39,7 @@ class ValveDetails extends StatelessWidget {
                               GestureDetector(
                                 onTap: () {},
                                 child: Container(
-                                  height: size.height * 0.05,
+                                  height: size.height * 0.02,
                                   width: size.width * 0.05,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(300),
@@ -58,10 +55,10 @@ class ValveDetails extends StatelessWidget {
                               GestureDetector(
                                 onTap: () {},
                                 child: Container(
-                                  height: size.height * 0.05,
+                                  height: size.height * 0.02,
                                   width: size.width * 0.05,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(300),
+                                    // borderRadius: BorderRadius.circular(300),
                                   ),
                                   child: Center(
                                     child: Image.asset("assets/setting.png"),
@@ -84,8 +81,8 @@ class ValveDetails extends StatelessWidget {
                         Text(
                           "Gate Valve ${index + 1}",
                           style: TextStyle(
-                              fontSize: size.height * 0.03,
-                              fontWeight: FontWeight.w900),
+                              fontSize: size.height * 0.023,
+                              fontWeight: FontWeight.w800),
                         ),
                         SizedBox(
                           height: size.height * 0.02,
@@ -130,7 +127,7 @@ class ValveDetails extends StatelessWidget {
                                           Text(
                                             "Gate Valve ${index + 1}",
                                             style: TextStyle(
-                                                fontSize: size.height * 0.023,
+                                                fontSize: size.height * 0.019,
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           // ToggleSwitch(
@@ -166,7 +163,7 @@ class ValveDetails extends StatelessWidget {
                                                   style: TextStyle(
                                                       fontWeight: FontWeight.w600,
                                                       fontSize:
-                                                      size.height * 0.020),
+                                                      size.height * 0.018 ),
                                                 ),
                                               ],
                                             ),

@@ -10,14 +10,21 @@ class SingupScreen extends StatefulWidget {
 }
 
 class _SingupScreenState extends State<SingupScreen> {
+  TextEditingController nameEditingController = TextEditingController();
+  TextEditingController phoneEditingController = TextEditingController();
+  TextEditingController emailEditingController = TextEditingController();
+  TextEditingController passwordEditingController = TextEditingController();
+  TextEditingController conformPasswordEditingController =
+      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor:  Color(0xffECF0F3),
+      backgroundColor: Color(0xffECF0F3),
       body: Container(
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(top: size.height*0.08),
+          padding: EdgeInsets.only(top: size.height * 0.08),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -63,7 +70,7 @@ class _SingupScreenState extends State<SingupScreen> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  // top: size.height * 0.01,
+                    // top: size.height * 0.01,
                     left: size.width * 0.08,
                     right: size.width * 0.08),
                 // height: size.height * 0.33,
@@ -91,6 +98,7 @@ class _SingupScreenState extends State<SingupScreen> {
                     child: Column(
                       children: [
                         TextField(
+                          controller: nameEditingController,
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             hintText: 'Name',
@@ -103,6 +111,7 @@ class _SingupScreenState extends State<SingupScreen> {
                           height: size.height * 0.03,
                         ),
                         TextField(
+                          controller: phoneEditingController,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
@@ -116,6 +125,7 @@ class _SingupScreenState extends State<SingupScreen> {
                           height: 50,
                         ),
                         TextField(
+                          controller: emailEditingController,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -129,6 +139,7 @@ class _SingupScreenState extends State<SingupScreen> {
                           height: 50,
                         ),
                         TextField(
+                          controller: passwordEditingController,
                           textInputAction: TextInputAction.next,
                           obscureText: true,
                           decoration: InputDecoration(
@@ -140,7 +151,9 @@ class _SingupScreenState extends State<SingupScreen> {
                         ),
                         SizedBox(
                           height: 50,
-                        ),TextField(
+                        ),
+                        TextField(
+                          controller: conformPasswordEditingController,
                           textInputAction: TextInputAction.done,
                           obscureText: true,
                           decoration: InputDecoration(
@@ -154,9 +167,12 @@ class _SingupScreenState extends State<SingupScreen> {
                           height: 50,
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => OTPScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OTPScreen()));
                             });
                           },
                           child: Container(
@@ -197,7 +213,7 @@ class _SingupScreenState extends State<SingupScreen> {
               Container(
                 margin: EdgeInsets.only(top: 50),
                 height: 50,
-                width: size.width*0.5,
+                width: size.width * 0.5,
                 decoration: BoxDecoration(
                   color: Color(0xffECF0F3),
                   borderRadius: BorderRadius.circular(30),
@@ -217,14 +233,21 @@ class _SingupScreenState extends State<SingupScreen> {
                   ],
                 ),
                 child: Row(
-
                   children: [
-                    SizedBox(width: size.width*0.06,),
-                    Image.asset("assets/icons8-google-480.png",height: size.height*0.03,),
-                    SizedBox(width: size.width*0.07,),
+                    SizedBox(
+                      width: size.width * 0.06,
+                    ),
+                    Image.asset(
+                      "assets/icons8-google-480.png",
+                      height: size.height * 0.03,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.07,
+                    ),
                     Text(
                       'Login with Google',
-                      style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
                     ),
                   ],
                 ),
@@ -239,9 +262,14 @@ class _SingupScreenState extends State<SingupScreen> {
                       width: size.width * 0.01,
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
-                          Navigator.pop(context, MaterialPageRoute(builder: (context)=>LoginScreen(),),);
+                          Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
                         });
                       },
                       child: Text(

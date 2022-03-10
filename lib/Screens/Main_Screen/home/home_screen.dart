@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
                   'Welcome home',
                   style: TextStyle(
                       fontSize: size.height * 0.03,
+                      fontFamily: 'Avenir-Book.ttf',
                       fontWeight: FontWeight.w900),
                 ),
                 Container(
@@ -32,17 +33,13 @@ class _HomeState extends State<Home> {
                       GestureDetector(
                         onTap: () {},
                         child: Container(
-                          height: size.height * 0.05,
+                          height: size.height * 0.02,
                           width: size.width * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(300),
                           ),
                           child: Center(
-                            child: Icon(
-                              Icons.grid_view,
-                              color: Color(0xff374957),
-                              size: size.height * 0.03,
-                            ),
+                            child:Image.asset("assets/grid.png",)
                           ),
                         ),
                       ),
@@ -52,17 +49,13 @@ class _HomeState extends State<Home> {
                       GestureDetector(
                         onTap: () {},
                         child: Container(
-                          height: size.height * 0.05,
+                          height: size.height * 0.02,
                           width: size.width * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(300),
                           ),
                           child: Center(
-                            child: Icon(
-                              Icons.settings,
-                              color: Color(0xff374957),
-                              size: size.height * 0.03,
-                            ),
+                            child: Image.asset("assets/setting.png",)
                           ),
                         ),
                       ),

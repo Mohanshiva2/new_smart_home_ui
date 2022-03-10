@@ -11,6 +11,20 @@ class RoutinesSecondScreen extends StatefulWidget {
 class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
   bool checkboxval = false;
 
+  bool bulb = false;
+  bool bulb2 = false;
+  bool tubelight = false;
+  bool fan = false;
+  bool fan2 = false;
+  bool motor = false;
+  bool floorlight = false;
+  bool curtain = false;
+  bool tv = false;
+  bool ac = false;
+  bool hometheater = false;
+  bool celinglight = false;
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,11 +34,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
         child: Stack(
           children: [
             Container(
-
-              margin: EdgeInsets.only(
-                  top: size.height * 0.035,
-                  left: size.width * 0.05,
-                  right: size.width * 0.05),
+             padding: EdgeInsets.all(30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -37,6 +47,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: size.height*0.03,
+                            fontFamily: 'Avenir-Book.ttf',
                           ),
                         ),
                         SizedBox(
@@ -45,7 +56,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                         Text(
                           'Create new routines to do multiple works at once and \nschedule them to do daily',
                           style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
+                              fontSize: 17, fontWeight: FontWeight.w500, fontFamily: 'Avenir-Book.ttf',),
                         ),
                       ],
                     ),
@@ -103,6 +114,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                           "Select Device",
                           style: TextStyle(
                               fontSize: size.height * 0.02,
+                              fontFamily: 'Avenir-Book.ttf',
                               fontWeight: FontWeight.w700),
                         ),
 
@@ -130,7 +142,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                     ),
                                     Text(
                                       'Make it schedule',
-                                      style: TextStyle(fontSize: 15),
+                                      style: TextStyle(fontSize: 15, fontFamily: 'Avenir-Book.ttf',),
                                     ),
                                   ],
                                 ),
@@ -184,7 +196,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            bulb = !bulb;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -213,13 +229,17 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
-                                                  ),
+                                                  child: Image.asset("assets/bulb.png",
+                                                    scale: 2.8,
+                                                    color: bulb  != true ? Color(0xff374957) : Colors.orange,),
+
+                                                  // Icon(
+                                                  //   Icons.lightbulb_rounded,
+                                                  //   size: 30,
+                                                  //   color: Color(
+                                                  //     0xff374957,
+                                                  //   ),
+                                                  // ),
                                                 ),
                                               ),
                                               SizedBox(
@@ -228,7 +248,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Bulb",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -237,7 +258,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            tubelight = !tubelight;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -266,12 +291,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/bulb.png",scale: 2.8,
+                                                    color: tubelight != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -281,7 +302,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Tube light",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -290,7 +312,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            fan = !fan;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -319,12 +345,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/fan.png",scale: 2.8,
+                                                    color: fan != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -334,7 +356,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Fan",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -343,7 +366,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            fan2 = !fan2;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -372,12 +399,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/fan.png",scale: 2.8,
+                                                    color: fan2 != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -387,7 +410,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Fan 2",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -405,7 +429,12 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                          motor = !motor;
+                                          });
+
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -434,12 +463,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/motor.png",scale: 2.8,
+                                                    color: motor != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -449,7 +474,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Motor",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -458,7 +484,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                         setState(() {
+                                           floorlight = !floorlight;
+                                         });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -487,12 +517,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/bulb.png",scale: 2.8,
+                                                    color: floorlight != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -502,7 +528,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Floor light",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -511,7 +538,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            curtain = !curtain;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -540,12 +571,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/curtain.png",scale: 2.8,
+                                                    color: curtain != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -555,7 +582,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Curtain",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -564,7 +592,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            tv = !tv;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -593,12 +625,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/tv.png",scale: 2.8,
+                                                    color: tv != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -608,7 +636,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "TV",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -626,7 +655,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            ac = !ac;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -655,12 +688,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child:Image.asset("assets/tv.png",scale: 2.8,
+                                                    color: ac != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -670,7 +699,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "AC",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -679,7 +709,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            hometheater = ! hometheater;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -708,12 +742,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/tv.png",scale: 2.8,
+                                                    color: hometheater != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -723,7 +753,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Home theater",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -732,7 +763,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            celinglight = !celinglight;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -761,12 +796,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child:Image.asset("assets/ceiling-light.png",scale: 2.5,
+                                                    color: celinglight != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -776,7 +807,9 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "ceiling light",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    color: Color(0xff787878),
+                                                    fontFamily: 'Avenir-Book.ttf',
+
                                                     fontSize:
                                                         size.height * 0.013),
                                               )
@@ -785,7 +818,11 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () {
+                                          setState(() {
+                                            bulb2 = !bulb2;
+                                          });
+                                        },
                                         child: Container(
                                           child: Column(
                                             children: [
@@ -814,12 +851,8 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                  child: Icon(
-                                                    Icons.lightbulb_rounded,
-                                                    size: 30,
-                                                    color: Color(
-                                                      0xff374957,
-                                                    ),
+                                                  child: Image.asset("assets/bulb.png",scale: 2.8,
+                                                    color: bulb2 != true ? Color(0xff374957) : Colors.orange,
                                                   ),
                                                 ),
                                               ),
@@ -829,10 +862,14 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                                               Text(
                                                 "Bulb 2",
                                                 style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                    // fontWeight: FontWeight.w500,
+                                                  color: Color(0xff787878),
+                                                  fontFamily: 'Avenir-Book.ttf',
                                                     fontSize:
-                                                        size.height * 0.013),
-                                              )
+                                                        size.height * 0.013,
+
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -865,6 +902,7 @@ class _RoutinesSecondScreenState extends State<RoutinesSecondScreen> {
                           child: Text(
                             "Done",
                             style: TextStyle(
+                                fontFamily: 'Avenir-Book.ttf',
                                 fontSize: size.height * 0.020,
                                 color: Color(0xffFFFFFF)),
                           ),

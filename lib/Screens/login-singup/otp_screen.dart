@@ -9,6 +9,8 @@ class OTPScreen extends StatefulWidget {
 }
 
 class _OTPScreenState extends State<OTPScreen> {
+
+  TextEditingController otpEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -88,11 +90,16 @@ class _OTPScreenState extends State<OTPScreen> {
                   child: Column(
 
                     children: [
-                     Text("Enter OTP sent to your Email",style: TextStyle(fontSize: size.height*0.018,color: Color(0xffACACAC)),),
+                     Text("Enter OTP sent to your Email",
+                       style: TextStyle(
+                           fontSize: size.height*0.018,
+                           color: Color(0xffACACAC),
+                       ),),
                       SizedBox(
                         height: size.height * 0.03,
                       ),
                       TextField(
+                        controller: otpEditingController,
                         keyboardType: TextInputType.phone,
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
@@ -168,7 +175,6 @@ class _OTPScreenState extends State<OTPScreen> {
                 ],
               ),
               child: Row(
-
                 children: [
                   SizedBox(width: size.width*0.06,),
                   Image.asset("assets/icons8-google-480.png",height: size.height*0.03,),
@@ -199,10 +205,10 @@ class _OTPScreenState extends State<OTPScreen> {
                       "Create account",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

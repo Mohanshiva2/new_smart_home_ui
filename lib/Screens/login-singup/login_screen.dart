@@ -8,6 +8,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController loginEmailEditingController = TextEditingController();
+  TextEditingController loginPasswordEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       TextField(
+                        controller: loginEmailEditingController,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
@@ -100,8 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: size.height * 0.03,
                       ),
                       TextField(
+                        controller: loginPasswordEditingController,
                         obscureText: true,
-
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
                             color: Color(0xffACACAC),

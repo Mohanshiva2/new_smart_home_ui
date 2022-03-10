@@ -11,8 +11,12 @@ class Routines extends StatefulWidget {
 }
 
 class _RoutinesState extends State<Routines> {
+
+
+
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -20,10 +24,7 @@ class _RoutinesState extends State<Routines> {
       body: Stack(
       children: [
           Container(
-            margin: EdgeInsets.only(
-                top: size.height * 0.035,
-                left: size.width * 0.05,
-                right: size.width * 0.05),
+           padding: EdgeInsets.all(30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,7 +32,7 @@ class _RoutinesState extends State<Routines> {
                   child: Text(
                     "Routines",
                     style:
-                        TextStyle(fontWeight: FontWeight.w900, fontSize: size.height*0.04),
+                        TextStyle(fontWeight: FontWeight.w900, fontSize: size.height*0.03, fontFamily: 'Avenir-Book.ttf',),
                   ),
                 ),
                 Container(
@@ -43,7 +44,7 @@ class _RoutinesState extends State<Routines> {
                       Text(
                         'Create new routines to do multiple works at once and \nschedule them to do daily',
                         style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w500),
+                            fontSize: 17, fontWeight: FontWeight.w500, fontFamily: 'Avenir-Book.ttf',),
                       )
                     ],
                   ),
@@ -93,7 +94,7 @@ class _RoutinesState extends State<Routines> {
                     children: [
                       Text(
                         "Recent Routines",
-                        style: TextStyle(fontSize: size.height * 0.03,fontWeight: FontWeight.w900),
+                        style: TextStyle(fontSize: size.height * 0.023,fontWeight: FontWeight.w900, fontFamily: 'Avenir-Book.ttf',),
                       ),
                       SizedBox(
                         height: size.height * 0.02,
@@ -142,7 +143,7 @@ class _RoutinesState extends State<Routines> {
                                         "I'm out",
                                         style: TextStyle(
                                             fontSize: size.height * 0.023,
-                                            fontWeight: FontWeight.w600),
+                                            fontWeight: FontWeight.w600, fontFamily: 'Avenir-Book.ttf',),
                                       ),
                                       ToggleSwitch(
                                         totalSwitches: 2,
@@ -200,7 +201,7 @@ class _RoutinesState extends State<Routines> {
                                         "I'm in",
                                         style: TextStyle(
                                             fontSize: size.height * 0.023,
-                                            fontWeight: FontWeight.w600),
+                                            fontWeight: FontWeight.w600, fontFamily: 'Avenir-Book.ttf',),
                                       ),
                                       ToggleSwitch(
                                         totalSwitches: 2,
@@ -258,7 +259,7 @@ class _RoutinesState extends State<Routines> {
                                         "Movie time",
                                         style: TextStyle(
                                             fontSize: size.height * 0.023,
-                                            fontWeight: FontWeight.w600),
+                                            fontWeight: FontWeight.w600, fontFamily: 'Avenir-Book.ttf',),
                                       ),
                                       ToggleSwitch(
                                         totalSwitches: 2,
@@ -315,7 +316,7 @@ class _RoutinesState extends State<Routines> {
                                         "Music mode",
                                         style: TextStyle(
                                             fontSize: size.height * 0.023,
-                                            fontWeight: FontWeight.w600),
+                                            fontWeight: FontWeight.w600, fontFamily: 'Avenir-Book.ttf',),
                                       ),
                                       ToggleSwitch(
                                         totalSwitches: 2,
